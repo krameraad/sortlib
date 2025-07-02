@@ -3,5 +3,6 @@
 
 void swap_int(int*, int*);
 void bubble_sort(int*, unsigned long long);
+void selection_sort(int*, unsigned long long);
 
 #endif
