@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 #include "sortlib.h"
 
 // Print an integer array to the terminal.
@@ -14,21 +12,40 @@ void print_array_int(int *array, size_t size)
         if (i < size - 1)
             printf(", ");
     }
+    printf("\n");
 }
 
-// void shuffle_array_int(int *array, size_t size)
-// {
-    
-// }
+// Uses malloc() to create a new array containing integers ranging from 0 to size.
+// @param size Amount of integers in the array.
+int *create_array(size_t size)
+{
+	int *array;
+	int i;
+
+	array = malloc(size * sizeof(int));
+	if (array == NULL)
+		return NULL;
+	while (i < size)
+	{
+		array[i] = i;
+		i++;
+	}
+	return array;
+}
 
 int main(int argc, char const *argv[])
 {
-    int array[] = {3, 1, 2, 5, 4, 9, 6, 7, 8, 0};
-    int arraysize = 10;
+	int *array;
+	int arraysize = 5;
+
+    srand(time(NULL)); // Initialize rng seed
+	array = create_array(arraysize);
+
     print_array_int(array, arraysize);
-    printf("\n");
-    bubble_sort(array, arraysize);
+	shuffle_array_int(array, arraysize);
     print_array_int(array, arraysize);
-    printf("\n");
+    bogo_sort(array, arraysize);
+    print_array_int(array, arraysize);
+
     return 0;
 }
