@@ -6,6 +6,7 @@
 void swap_int(int*, int*);
 void shuffle_array_int(int*, unsigned long long);
 void bubble_sort(int*, unsigned long long);
+void cocktail_sort(int*, unsigned long long);
 void selection_sort(int*, unsigned long long);
 void bogo_sort(int*, unsigned long long);
 

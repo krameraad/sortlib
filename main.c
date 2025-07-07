@@ -36,15 +36,14 @@ int *create_array(size_t size)
 int main(int argc, char const *argv[])
 {
 	int *array;
-	int arraysize = 5;
+	int arraysize = 10;
 
     srand(time(NULL)); // Initialize rng seed
 	array = create_array(arraysize);
 
-    print_array_int(array, arraysize);
 	shuffle_array_int(array, arraysize);
     print_array_int(array, arraysize);
-    bogo_sort(array, arraysize);
+    cocktail_sort(array, arraysize);
     print_array_int(array, arraysize);
 
     return 0;

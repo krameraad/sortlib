@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "sortlib.h"
 
 // Shuffle an integer array randomly, using rand().
