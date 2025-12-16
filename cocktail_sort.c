@@ -1,4 +1,4 @@
-#include "sortlib.h"
+#include "../sortlib.h"
 
 void cocktail_sort(int *array, size_t size)
 {
